@@ -1,0 +1,390 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Gradient background */
+    color: #333;
+}
+
+.exam-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 1%;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+}
+
+.question-container {
+    margin: 30px 0;
+}
+
+.question {
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000; /* Darker color for better readability */
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.option {
+    margin: 10px 0;
+    padding: 12px 15px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+}
+
+.option.selected {
+    background-color: #d4edff;
+    border-color: #3498db;
+}
+
+.option.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+.option.incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #000000;
+    cursor: not-allowed;
+}
+
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.score-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.score-display p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#scoreDisplay, #percentageDisplay {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#resultMessage {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.pass {
+    color: #28a745;
+    background-color: #d4edda;
+}
+
+.fail {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.answers-review {
+    margin-top: 30px;
+}
+
+.answer-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.answer-item.correct {
+    border-left: 5px solid #28a745;
+}
+
+.answer-item.incorrect {
+    border-left: 5px solid #dc3545;
+}
+
+.answer-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answer-selected {
+    color: #dc3545;
+    margin-bottom: 5px;
+}
+
+.answer-correct {
+    color: #28a745;
+}
+
+#retakeBtn {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #6c757d;
+}
+
+#retakeBtn:hover {
+    background-color: #5a6268;
+}
+
+/* Quiz Styling */
+#question {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-btn {
+    padding: 0.8rem;
+    background-color: #000000;
+    border: 1px solid #fffb09;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.option-btn:hover {
+    background-color: #af3b3b;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.correct-answer {
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+}
+
+#result {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.correct {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.incorrect {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+#next-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#next-btn:hover {
+    background-color: #0069d9;
+}
+
+#score, #progress {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #ee2727;
+}
+
+.review-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.review-item.correct {
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+.review-item.incorrect {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+.review-btn {
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.review-btn:hover {
+    background-color: #5a6268;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+
+/* Timer Styles */
+#timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4444;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Warning state */
+#timer.warning-active {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+/* Flash animation */
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.warning-flash {
+    animation: flash 1s infinite;
+}
+
+/* Time warning message */
+.time-warning {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #ff4444;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
